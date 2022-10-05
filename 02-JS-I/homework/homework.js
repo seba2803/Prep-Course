@@ -228,14 +228,19 @@ function esVocal(letra){
   switch (letra){
   case 'a': return "Es vocal";
   break;
+
   case 'e': return "Es vocal";
   break;
+
   case 'i': return "Es vocal";
   break;
+
   case 'o': return "Es vocal";
   break;
+
   case 'u': return "Es vocal";
   break;
+  
   default:
     if (letra !='a' || letra !='e' || letra !='i' || letra !='o' || letra !='u') 
   return "Dato incorrecto";
