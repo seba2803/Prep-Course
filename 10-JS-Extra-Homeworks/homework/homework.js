@@ -21,17 +21,22 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
-  var object ={};
-  var cont = 1;
-  for(var i= 0; i < string.lenght; i++){
-    
-  }
-    for(var j=i+1;j<string.lenght;j++){
-      if(string.charAt(i)===string.charAt(j)){
-        cont++;
-      }
+  var objeto = {};
+  var cont = 0;
+  for(var i = string[0]; i < string.length; i++){
+    if(i < string.length -1){
+      continue;
     }
-  return object;
+    for(var j = i + 1; j < string.length; i++){
+       if(string[i] === string[j]){
+        cont ++;
+       }
+    }
+    objeto['i'] = cont;
+    cont = 0;
+  }
+  return objeto;
+  // modificar!!!!
 }
 
 
@@ -49,6 +54,11 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+    var reves = "";
+    for(var i = str.length - 1; i >= 0; i--){
+      reves = reves + str.charAt(i);
+    }
+    return reves;
 } 
 
 
@@ -57,6 +67,17 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var deintastring = String(numero);
+  var num = '';
+  for(var i = deintastring.length - 1; i >= 0; i--){
+     num = num + deintastring[i];
+  }
+  if(num === deintastring){
+    return 'Es capicua';
+  }
+  else if(num!== deintastring){
+    return 'No es capicua';
+  }
 }
 
 
@@ -64,6 +85,13 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var nuevaStr = "";
+  for(var i = 0; i < cadena.length; i++){
+    if(cadena[i] !== 'a' && cadena[i] !== 'b' && cadena[i] !== 'c'){
+      nuevaStr = nuevaStr + cadena[i];
+    }
+  }
+  return nuevaStr;
 }
 
 
