@@ -78,12 +78,7 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-    if(objeto[propiedad]){
-      return true;
-    }
-    else{
-      return false;
-    }
+   return objeto.hasOwnProperty(propiedad); // el metodo hasOwnProperty() sirve para saber si el objeto tiene cierta propiedad, y si existe devuelve true o false en el caso que no exista;
 }
 
 function verificarPassword (usuario, password) {
