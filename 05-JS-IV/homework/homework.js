@@ -7,10 +7,10 @@ function crearGato (nombre, edad) {
   // Devuelve el objeto
   // Tu código:
   let objeto = {
-    nombre : nombre,
-    edad : edad,
-    meow : function meow (){
-      return 'Meow!'
+    nombre: nombre,
+    edad: edad,
+    meow: function meow(){
+      return 'Meow!';
     }
   }
   return objeto;
@@ -53,23 +53,23 @@ function nuevoUsuario (nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  let miObjeto = {
-    nombre : nombre,
-    email : email,
-    password : password,
+  let myobject = { 
+    nombre: nombre,
+    email: email,
+    password: password
   }
-  return miObjeto;
+  return myobject;
 }
 
 function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if(usuario.email == null || usuario.email == undefined){
-    return false;
+  if(usuario.email){
+    return true;
   }
   else{
-    return true;
+    return false;
   }
 }
 
@@ -78,7 +78,7 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-   return objeto.hasOwnProperty(propiedad); // el metodo hasOwnProperty() sirve para saber si el objeto tiene cierta propiedad, y si existe devuelve true o false en el caso que no exista;
+  return objeto.hasOwnProperty(propiedad); // el metodo hasOwnProperty() sirve para saber si el objeto tiene cierta propiedad, y si existe devuelve true o false en el caso que no exista;
 }
 
 function verificarPassword (usuario, password) {
@@ -89,7 +89,9 @@ function verificarPassword (usuario, password) {
   if(usuario.password === password){
     return true;
   }
-  return false;
+  else{
+    return false;
+  }
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
@@ -116,9 +118,9 @@ function pasarUsuarioAPremium (usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
   for(var i = 0; i < usuarios.length; i++){
-    usuarios[i].esPremium = true
+    usuarios[i].esPremium = true;
   }
-  return usuarios;
+  return usuarios;  
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -128,11 +130,11 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  var sumadelikes = 0;
+  let sumadeLikes = 0;
   for(let i = 0; i < usuario.posts.length; i++){
-    sumadelikes += usuario.posts[i].likes;
+    sumadeLikes = sumadeLikes + usuario.posts[i].likes;  
   }
-  return sumadelikes;
+  return sumadeLikes;
 }
 
 function agregarMetodoCalculoDescuento (producto) {
