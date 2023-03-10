@@ -111,12 +111,12 @@ function sortArray(arr) {
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
   for(let i = 0; i < arr.length - 1; i++){
-    for(let j = 0; j < arr.length - 1; j++){
-      if(arr[j] > arr[j + 1]){
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[i].length > arr[j].length){
         //ordenamiento burbuja
-        let aux = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = aux;
+        let aux = arr[i];
+        arr[i] = arr[j];
+        arr[j] = aux;
       }
     }
   }
@@ -132,7 +132,7 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Escribe tu código aquí  
   let interseccion = [];
   let cont = 0;
-  for(let i = 0; i < arreglo1.length-1; i++){
+  for(let i = 0; i < arreglo1.length; i++){
     for(let j = 0; j < arreglo2.length; j++){
       if(arreglo1[i] === arreglo2[j])
         cont++;
@@ -140,6 +140,7 @@ function buscoInterseccion(arreglo1, arreglo2){
     if(cont > 0){
       interseccion.push(arreglo1[i]);
     }
+    cont = 0;
   }
   return interseccion;
 }
