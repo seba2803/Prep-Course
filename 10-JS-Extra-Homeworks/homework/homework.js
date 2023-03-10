@@ -19,22 +19,13 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
-
-  //MODIFICAR!!!
-  var objeto = {};
-  var contdeletras = 1;
-    for(var i = 0; i < string.length; i++){
-      for(var j = i + 1; j < string.length; j++){
-        if(string[i] === string[j]){
-          contdeletras++;
-        }
-        if(j === string.length - 1){
-          objeto[string[i]] = contdeletras;
-          contdeletras = 1;
-        }
-      }
-    }
-  return objeto;
+  let obj = {}; //se crea el objeto vacio
+//string se hace array //se lo recorre con el forEach
+  string.split("").forEach(element =>{  //element identifica los 'valores' es decir las letras
+    obj[element] = (obj[element] || 0) + 1;
+//obj[element] simboliza {'primera letra': }  //(obj[element] || 0) + 1 esto se encarga de asignar la clave obj[element] y verificar si existe tal clave y le suma 1, en caso de no existir le agrega 0 y le suma 1  
+  });
+  return obj;
 }
 
 
